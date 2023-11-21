@@ -6,6 +6,7 @@ import { EditarPacienteComponent } from './editar-paciente/editar-paciente.compo
 import { ExcluirPacienteComponent } from './excluir-paciente/excluir-paciente.component';
 import { PacienteRoutingModule } from './paciente.routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PacienteService } from './services/pacientes.service';
 
 
 
@@ -21,5 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     PacienteRoutingModule,
     ReactiveFormsModule
   ],
+  providers: [
+    PacienteService
+  ]
 })
 export class PacienteModule { }
