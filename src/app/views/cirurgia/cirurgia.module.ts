@@ -5,6 +5,8 @@ import { ListarCirurgiaComponent } from './listar-cirurgia/listar-cirurgia.compo
 import { InserirCirurgiaComponent } from './inserir-cirurgia/inserir-cirurgia.component';
 import { EditarCirurgiaComponent } from './editar-cirurgia/editar-cirurgia.component';
 import { ExcluirCirurgiaComponent } from './excluir-cirurgia/excluir-cirurgia.component';
+import { CirurgiaRoutingModule } from './cirurgia.routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +19,9 @@ import { ExcluirCirurgiaComponent } from './excluir-cirurgia/excluir-cirurgia.co
     ExcluirCirurgiaComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    CirurgiaRoutingModule,
+    ReactiveFormsModule
+  ],
 })
 export class CirurgiaModule { }

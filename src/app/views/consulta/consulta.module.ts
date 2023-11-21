@@ -5,6 +5,8 @@ import { ListarConsultaComponent } from './listar-consulta/listar-consulta.compo
 import { InserirConsultaComponent } from './inserir-consulta/inserir-consulta.component';
 import { EditarConsultaComponent } from './editar-consulta/editar-consulta.component';
 import { ExcluirConsultaComponent } from './excluir-consulta/excluir-consulta.component';
+import { ConsultaRoutingModule } from './consulta.routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +19,9 @@ import { ExcluirConsultaComponent } from './excluir-consulta/excluir-consulta.co
     ExcluirConsultaComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    ConsultaRoutingModule,
+    ReactiveFormsModule
+  ],
 })
 export class ConsultaModule { }

@@ -1,1 +1,19 @@
-<p>listar-paciente works!</p>
+<div class="container">
+  <div class="row">
+    <div class="text-md-start">
+      <hr />
+      <h1 class="text-dark">Listar Pacientes</h1> 
+      <hr> 
+    </div>
+    <div class="d-grid d-md-flex gap-1 mt-4">
+      <a
+        [routerLink]="['/pacientes/inserir']"
+        role="button"
+        class="btn btn-light btn-outline-dark btn-lg gap-2"
+      >
+        <i class="pi pi-plus-circle me-2"></i>
+        Novo Paciente
+      </a>
+    </div>
+  </div>
+</div>

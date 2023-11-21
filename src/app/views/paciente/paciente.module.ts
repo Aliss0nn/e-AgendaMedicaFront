@@ -5,6 +5,8 @@ import { ListarPacienteComponent } from './listar-paciente/listar-paciente.compo
 import { InserirPacienteComponent } from './inserir-paciente/inserir-paciente.component';
 import { EditarPacienteComponent } from './editar-paciente/editar-paciente.component';
 import { ExcluirPacienteComponent } from './excluir-paciente/excluir-paciente.component';
+import { PacienteRoutingModule } from './paciente.routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +19,9 @@ import { ExcluirPacienteComponent } from './excluir-paciente/excluir-paciente.co
     ExcluirPacienteComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    PacienteRoutingModule,
+    ReactiveFormsModule
+  ],
 })
 export class PacienteModule { }

@@ -5,6 +5,8 @@ import { ListarMedicoComponent } from './listar-medico/listar-medico.component';
 import { InserirMedicoComponent } from './inserir-medico/inserir-medico.component';
 import { EditarMedicoComponent } from './editar-medico/editar-medico.component';
 import { ExcluirMedicoComponent } from './excluir-medico/excluir-medico.component';
+import { MedicoRoutingModule } from './medico.routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +19,9 @@ import { ExcluirMedicoComponent } from './excluir-medico/excluir-medico.componen
     ExcluirMedicoComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    MedicoRoutingModule,
+    ReactiveFormsModule
+  ],
 })
 export class MedicoModule { }
