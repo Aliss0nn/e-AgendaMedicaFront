@@ -1,0 +1,20 @@
+import { ListarMedicoViewModel } from "../../medico/models/listarMedico.View-Model";
+import { ListarPacienteViewModel } from "../../paciente/models/listar-paciente.view-Model";
+
+export class VisualizarCirurgiaViewModel{
+  id: string;
+  data: string;
+  horaInicio: string;
+  horaFinal: string;
+  pacienteId: ListarPacienteViewModel;
+  medicosId: ListarMedicoViewModel[];
+
+  constructor(id: string, data: string, horainicio: string, horafinal: string, pacienteId: ListarPacienteViewModel, medicosId: ListarMedicoViewModel[]){
+    this.id = id;
+    this.data = data;
+    this.horaInicio = horainicio;
+    this.horaFinal = horafinal;
+    this.pacienteId = pacienteId;
+    this.medicosId = medicosId;
+  }
+}

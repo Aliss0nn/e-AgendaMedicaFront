@@ -24,6 +24,6 @@ import { PacienteService } from './services/pacientes.service';
   ],
   providers: [
     PacienteService
-  ]
+  ],
 })
 export class PacienteModule { }

@@ -1,20 +1,21 @@
 import { ListarMedicoViewModel } from "../../medico/models/listarMedico.View-Model";
 import { ListarPacienteViewModel } from "../../paciente/models/listar-paciente.view-Model";
 
-export class ListarConsultaViewModel{
-id: string;
+export class FormsConsultaViewModel{
 data: string;
 horaInicio: string;
 horaFinal: string;
 PacienteId: ListarPacienteViewModel;
 MedicoId: ListarMedicoViewModel;
+recuperacaoMedico: string;
 
-constructor(id: string, data: string, horaInicio: string, horaFinal: string, PacienteId: ListarPacienteViewModel, MedicoId: ListarMedicoViewModel){
-  this.id = id;
+constructor(data: string, horaInicio: string, horaFinal: string, PacienteId: ListarPacienteViewModel,
+   MedicoId: ListarMedicoViewModel, recuperacaoMedico: string){
   this.data = data;
   this.horaInicio = horaInicio;
   this.horaFinal = horaFinal;
   this.PacienteId = PacienteId;
   this.MedicoId = MedicoId;
+  this.recuperacaoMedico = recuperacaoMedico;
 }
 }
