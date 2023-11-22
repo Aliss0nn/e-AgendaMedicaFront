@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ListarMedicoViewModel } from '../../medico/models/listarMedico.View-Model';
 import { ActivatedRoute } from '@angular/router';
+import { ListarPacienteViewModel } from '../models/listar-paciente.view-Model';
 
 @Component({
   selector: 'app-listar-paciente',
@@ -8,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./listar-paciente.component.css']
 })
 export class ListarPacienteComponent implements OnInit{
-pacientes: ListarMedicoViewModel[] = [];
+pacientes: ListarPacienteViewModel[] = [];
 
 constructor(private route: ActivatedRoute){
 

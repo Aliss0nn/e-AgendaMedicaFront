@@ -7,7 +7,7 @@ import { ExcluirPacienteComponent } from './excluir-paciente/excluir-paciente.co
 import { PacienteRoutingModule } from './paciente.routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PacienteService } from './services/pacientes.service';
-
+import 'src/app/extensions/form-group.extension';
 
 
 @NgModule({

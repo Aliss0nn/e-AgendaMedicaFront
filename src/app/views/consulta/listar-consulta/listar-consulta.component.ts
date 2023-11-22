@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ListarConsultaViewModel } from '../models/listarConsulta.View-Model';
 
 @Component({
   selector: 'app-listar-consulta',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./listar-consulta.component.css']
 })
 export class ListarConsultaComponent {
-
+consultas: ListarConsultaViewModel[] = [];
 }

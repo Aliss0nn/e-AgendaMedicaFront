@@ -30,6 +30,7 @@ export class InserirPacienteComponent implements OnInit{
     cpf: new FormControl('',[Validators.required]),
     cep: new FormControl('', [Validators.required]),
    });
+
   }
 
   campoEstaInvalido(nome: string) {
@@ -41,11 +42,13 @@ export class InserirPacienteComponent implements OnInit{
   }
 
   gravar(){
-    // if(this.form.invalid){
-    //   for(let erro of this.form.validate()){
-    //     this.toastrService.warning(erro);
-    //   }
-    // }
+    if(this.form.invalid){
+      for(let err of this.form.validate()){
+        this.toastrService.warning(err);
+      }
+
+      return;
+    }
 
     this.pacienteVM = this.form.value;
 
