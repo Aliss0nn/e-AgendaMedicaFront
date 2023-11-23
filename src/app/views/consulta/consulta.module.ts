@@ -6,6 +6,7 @@ import { EditarConsultaComponent } from './editar-consulta/editar-consulta.compo
 import { ExcluirConsultaComponent } from './excluir-consulta/excluir-consulta.component';
 import { ConsultaRoutingModule } from './consulta.routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ConsultaService } from './services/consulta.service';
 
 
 
@@ -20,6 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ConsultaRoutingModule,
     ReactiveFormsModule
+  ],
+  providers: [
+    ConsultaService
   ],
 })
 export class ConsultaModule { }

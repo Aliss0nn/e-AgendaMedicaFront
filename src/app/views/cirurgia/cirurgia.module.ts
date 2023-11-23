@@ -6,6 +6,7 @@ import { EditarCirurgiaComponent } from './editar-cirurgia/editar-cirurgia.compo
 import { ExcluirCirurgiaComponent } from './excluir-cirurgia/excluir-cirurgia.component';
 import { CirurgiaRoutingModule } from './cirurgia.routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CirurgiaService } from './services/cirurgia.service';
 
 
 
@@ -20,6 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     CirurgiaRoutingModule,
     ReactiveFormsModule
+  ],
+  providers: [
+    CirurgiaService
   ],
 })
 export class CirurgiaModule { }

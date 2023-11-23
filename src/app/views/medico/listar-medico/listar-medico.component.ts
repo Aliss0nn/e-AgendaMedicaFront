@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ListarMedicoViewModel } from '../models/listarMedico.View-Model';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { MedicoService } from '../services/medico.service';
 
 @Component({
   selector: 'app-listar-medico',
@@ -8,11 +10,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./listar-medico.component.css']
 })
 export class ListarMedicoComponent implements OnInit{
-medicos: ListarMedicoViewModel[] = [];
+medicos!: Observable<ListarMedicoViewModel[]>;
 
-constructor(private route: ActivatedRoute){
+constructor(private route: ActivatedRoute,
+  private medicoService: MedicoService){
 }
   ngOnInit(): void {
-    this.medicos = this.route.snapshot.data['medicos'];
+this.medicos = this.medicoService.selecionarTodos();
   }
 }

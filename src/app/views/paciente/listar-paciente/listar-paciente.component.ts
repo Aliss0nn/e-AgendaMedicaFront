@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ListarMedicoViewModel } from '../../medico/models/listarMedico.View-Model';
 import { ActivatedRoute } from '@angular/router';
 import { ListarPacienteViewModel } from '../models/listar-paciente.view-Model';
+import { PacienteService } from '../services/pacientes.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-listar-paciente',
@@ -9,12 +10,13 @@ import { ListarPacienteViewModel } from '../models/listar-paciente.view-Model';
   styleUrls: ['./listar-paciente.component.css']
 })
 export class ListarPacienteComponent implements OnInit{
-pacientes: ListarPacienteViewModel[] = [];
+pacientes!: Observable<ListarPacienteViewModel[]>;
 
-constructor(private route: ActivatedRoute){
+constructor(private route: ActivatedRoute,
+  private servicePaciente: PacienteService){
 
 }
 ngOnInit(): void {
-  this.pacientes = this.route.snapshot.data['pacientes'];
+this.pacientes = this.servicePaciente.selecionarTodos();
 }
 }
