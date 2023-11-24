@@ -3,13 +3,17 @@ import { ListarPacienteViewModel } from "../../paciente/models/listar-paciente.v
 
 export class ListarConsultaViewModel{
 id: string;
-data: string;
+data: Date;
 horaInicio: string;
 horaFinal: string;
 PacienteId: ListarPacienteViewModel;
 MedicoId: ListarMedicoViewModel;
 
-constructor(id: string, data: string, horaInicio: string, horaFinal: string, PacienteId: ListarPacienteViewModel, MedicoId: ListarMedicoViewModel){
+
+constructor(id: string, data: Date, 
+  horaInicio: string, horaFinal: string, 
+  PacienteId: ListarPacienteViewModel,
+   MedicoId: ListarMedicoViewModel,){
   this.id = id;
   this.data = data;
   this.horaInicio = horaInicio;

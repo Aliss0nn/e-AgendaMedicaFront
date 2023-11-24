@@ -1,1 +1,100 @@
-<p>editar-consulta works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-10 col-lg-6 mx-auto mt-5">
+      <div class="text-md-start">
+        <h1 class="fw-bold text-primary">Editar Consulta</h1>
+      </div>
+
+      <form [formGroup]="form" class="mt-4">
+        
+        <div class="form-group mb-3 position-relative">
+          <label class="form-label">Data:</label>
+          <input class="form-control"
+           type="date"
+           formControlName="data" />
+        </div>
+
+        <div class="form-group mb-3 position-relative row">
+          <div class="col-6">
+            <label class="form-label">Hora de Início:</label>
+            <input
+            formControlName="horaInicio"
+              class="form-control"
+              type="time"
+              placeholder="Digite a Hora de Início da Consulta"
+            />
+          </div>
+
+          <div class="col">
+            <label class="form-label">Hora de Término:</label>
+            <input
+            formControlName="horaTermino"
+              class="form-control"
+              type="time"
+              placeholder="Digite o Hórario esperado para o término da Consulta"
+            />
+          </div>
+        </div>
+
+        <div class="form-group mb-3 position-relative row">
+          <div class="col-11">
+            <label class="form-label">Paciente:</label>
+            <select      
+             class="form-select w-50"
+             name="nomePaciente" id=""
+            formControlName="nomePaciente"
+           >
+          <option *ngFor="let paciente of pacientes" [ngValue]="paciente.id">   
+           {{paciente.nome}}
+          </option>                         
+            </select>
+          </div>
+          <div class="col-11"> 
+            <label class="form-label">Médico:</label>
+            <select      
+             class="form-select w-50"
+             name="nomeMedico" id=""
+            formControlName="nomeMedico"
+           >
+          <option *ngFor="let medico of medicos" [ngValue]="medico.id">   
+           {{medico.nome}}
+          </option>                         
+            </select>
+          </div>
+          </div>
+          
+          <div class="form-group mb-3 position-relative">
+            <label class="form-label">Recuperação Médico:</label>
+            <input
+            formControlName="recuperacao"
+              class="form-control"
+              type="number"
+              placeholder="30 Minutos"         
+            />
+              <span>A Recuperação precisa ser preenchida, valor padrão 30 Minutos.</span>
+            </div>
+
+        <div class="card-footer g-grid d-flex gap-1 mt-5">
+          <button
+            data-cy="btnGravar"
+            (click)="gravar()"
+            type="button"
+            class="btn btn-primary px-5"
+          >
+            <i class="bi bi-save me-2"></i>
+            Gravar
+          </button>
+          <button
+            routerLink="/compromissos/listar"
+            type="button"
+            class="btn btn-outline-primary px-5"
+          >
+            <i class="pi pi-arrow-left me-2"></i>
+            Voltar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

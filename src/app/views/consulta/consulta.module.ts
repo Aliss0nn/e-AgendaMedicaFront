@@ -7,6 +7,7 @@ import { ExcluirConsultaComponent } from './excluir-consulta/excluir-consulta.co
 import { ConsultaRoutingModule } from './consulta.routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConsultaService } from './services/consulta.service';
+import 'src/app/extensions/form-group.extension';
 
 
 

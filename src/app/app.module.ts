@@ -28,12 +28,12 @@ import { CirurgiaModule } from './views/cirurgia/cirurgia.module';
       preventDuplicates: true,
     }),
 
+    HttpClientModule,
     CoreModule,
     PacienteModule,
     MedicoModule,
     ConsultaModule,
     CirurgiaModule,
-    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
