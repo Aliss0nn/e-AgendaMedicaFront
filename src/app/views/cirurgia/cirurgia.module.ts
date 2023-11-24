@@ -8,6 +8,8 @@ import { CirurgiaRoutingModule } from './cirurgia.routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CirurgiaService } from './services/cirurgia.service';
 import 'src/app/extensions/form-group.extension';
+import { NgSelectComponent, NgSelectModule } from '@ng-select/ng-select';
+
 
 
 
@@ -21,7 +23,8 @@ import 'src/app/extensions/form-group.extension';
   imports: [
     CommonModule,
     CirurgiaRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgSelectModule,
   ],
   providers: [
     CirurgiaService

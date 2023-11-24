@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { VisualizarPacieneViewModel } from '../models/visualizar-paciente.view-model';
 import { PacienteService } from '../services/pacientes.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-excluir-paciente',
@@ -15,7 +16,8 @@ export class ExcluirPacienteComponent implements OnInit {
   constructor(
     private pacienteService: PacienteService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private toastrService: ToastrService
   ) {
     this.pacienteVm = new VisualizarPacieneViewModel('', '', '', '', '', '');
   }
@@ -33,8 +35,23 @@ export class ExcluirPacienteComponent implements OnInit {
   }
 
   gravar() {
-    this.pacienteService.excluir(this.idSelecionado!).subscribe((res) => {
-      this.router.navigate(['/pacientes', 'listar']);
-    });
+    this.pacienteService.excluir(this.idSelecionado!).subscribe({
+      next: () => this.processarSucesso(),
+      error: (erro: Error) => this.processarFalha(erro),
+    }
+    );
+  }
+
+  processarSucesso(){
+    this.toastrService.success(
+      `O paciente foi excluido com sucesso!`,
+      'Sucesso'
+    );
+
+    this.router.navigate(['/pacientes/listar'])
+  }
+
+  processarFalha(erro: Error){
+    this.toastrService.error(erro.message, 'Error');
   }
 }

@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MedicoModule } from './views/medico/medico.module';
 import { ConsultaModule } from './views/consulta/consulta.module';
 import { CirurgiaModule } from './views/cirurgia/cirurgia.module';
+import { DashboardModule } from './views/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [
@@ -24,16 +25,17 @@ import { CirurgiaModule } from './views/cirurgia/cirurgia.module';
 
     ToastrModule.forRoot({
       timeOut: 5000,
-      positionClass: 'toast-bottom-center',
+      positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),
 
     HttpClientModule,
     CoreModule,
-    PacienteModule,
     MedicoModule,
     ConsultaModule,
     CirurgiaModule,
+    DashboardModule,
+    PacienteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

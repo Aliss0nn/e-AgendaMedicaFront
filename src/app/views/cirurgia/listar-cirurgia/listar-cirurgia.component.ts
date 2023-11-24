@@ -8,11 +8,11 @@ import { CirurgiaService } from '../services/cirurgia.service';
   templateUrl: './listar-cirurgia.component.html',
   styleUrls: ['./listar-cirurgia.component.css']
 })
-export class ListarCirurgiaComponent implements OnInit {
+export class ListarCirurgiaComponent  {
 cirurgias!: Observable<ListarCirurgiaViewModel[]>;
 
 constructor(private cirurgiaService: CirurgiaService){}
-  ngOnInit(): void {
-    this.cirurgias = this.cirurgiaService.selecionarTodos();
-  }
+  // ngOnInit(): void {
+  //   this.cirurgias = this.cirurgiaService.selecionarTodos();
+  // }
 }

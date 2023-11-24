@@ -24,7 +24,7 @@
         <div class="card-body d-flex flex-column gap-1">
           <div class="d-flex flex-column">
             <h5 class="card-title mb-1 text-primary">
-             Card Do Paciente {{paciente.nome}}
+             Card Do Paciente: {{paciente.nome}}
             </h5>       
             <span class="card-text text-muted">  </span>
           </div>
@@ -44,24 +44,27 @@
         <div
           class="d-flex gap-1 justify-content-end card-footer bg-transparent"
         >
-          <button
+          <button         
             class="btn btn-outline-dark rounded-5 py-2"
             routerLink="/pacientes/editar/{{paciente.id}}"
             aria-label="Editar"
             ngbTooltip="Editar"
             placement="bottom"
-          >
-            <i class="bi bi-pen"></i>
-          </button>
-          <button
-            class="btn btn-outline-dark rounded-5 py-2"
-            routerLink="/pacientes/excluir/{{paciente.id}}"
-            aria-label="Excluir"
-            ngbTooltip="Excluir"
-            placement="bottom"
-          >
-            <i class="bi bi-trash"></i>
-          </button>
+            
+          >      
+          Editar 
+          <i class="bi bi-pen"></i>
+          </button>     
+         <button    
+         class="btn btn-outline-dark rounded-5 py-2"
+         routerLink="/pacientes/excluir/{{paciente.id}}"
+         aria-label="Excluir"
+         ngbTooltip="Excluir"
+         placement="bottom"
+       >
+       Excluir
+       <i class="bi bi-trash"></i>
+       </button>
         </div>
       </div>
       </div>
