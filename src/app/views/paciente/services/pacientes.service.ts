@@ -7,7 +7,7 @@ import { VisualizarPacieneViewModel } from '../models/visualizar-paciente.view-m
 
 @Injectable()
 export class PacienteService{
-  private endpoint: string = 'https://localhost:7288/api/pacientes';
+  private endpoint: string = 'https://localhost:7288/api/pacientes/';
   
   constructor(private http: HttpClient){}
 
@@ -48,7 +48,7 @@ export class PacienteService{
     );
   }
 
-  public selecionarPorId(id: string) : Observable<any>{
+  public selecionarPorId(id: string) : Observable<FormsPacienteViewModel>{
     return this.http
     .get<any>(this.endpoint + id)
     .pipe(

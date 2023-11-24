@@ -9,7 +9,7 @@ import { VisualizarCirurgiaViewModel } from "../models/visualizarCirurgia.View-M
 export class CirurgiaService{
   constructor(private http: HttpClient){}
 
-  private endpoint: string = '';
+  private endpoint: string = 'https://localhost:7288/api/cirurgias/';
 
   public inserir(cirurgia: FormsCirurgiaViewModel){
     return this.http.post<any>(this.endpoint,cirurgia)

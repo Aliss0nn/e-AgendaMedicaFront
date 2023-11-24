@@ -13,9 +13,7 @@ export class ListarPacienteComponent implements OnInit{
 pacientes!: Observable<ListarPacienteViewModel[]>;
 
 constructor(private route: ActivatedRoute,
-  private servicePaciente: PacienteService){
-
-}
+  private servicePaciente: PacienteService){}
 ngOnInit(): void {
 this.pacientes = this.servicePaciente.selecionarTodos();
 }

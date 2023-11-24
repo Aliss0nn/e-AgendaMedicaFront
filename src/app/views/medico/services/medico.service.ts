@@ -9,7 +9,7 @@ import { VisualizarMedicoViewModel } from "../models/visualizarMedico.View-Model
 export class MedicoService{
   constructor(private http: HttpClient) {}
 
-  private endpoint: string = 'https://localhost:7288/api/medicos';
+  private endpoint: string = 'https://localhost:7288/api/medicos/';
 
   public inserir(medico: FormsMedicoViewModel){
     return this.http.post<any>(this.endpoint, medico)

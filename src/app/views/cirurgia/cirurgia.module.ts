@@ -7,6 +7,7 @@ import { ExcluirCirurgiaComponent } from './excluir-cirurgia/excluir-cirurgia.co
 import { CirurgiaRoutingModule } from './cirurgia.routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CirurgiaService } from './services/cirurgia.service';
+import 'src/app/extensions/form-group.extension';
 
 
 

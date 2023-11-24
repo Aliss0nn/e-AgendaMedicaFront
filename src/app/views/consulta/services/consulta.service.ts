@@ -9,7 +9,7 @@ import { map, catchError, Observable, throwError } from "rxjs";
 export class ConsultaService{
   constructor(private http: HttpClient) {}
 
-  private endpoint: string = 'https://localhost:7288/api/consultas';
+  private endpoint: string = 'https://localhost:7288/api/consultas/';
 
   public inserir(consulta: FormsConsultaViewModel){
     return this.http.post<any>(this.endpoint, consulta)
