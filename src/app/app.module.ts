@@ -25,7 +25,7 @@ import { DashboardModule } from './views/dashboard/dashboard.module';
 
     ToastrModule.forRoot({
       timeOut: 5000,
-      positionClass: 'toast-top-right',
+      positionClass: 'toast-bottom-center',
       preventDuplicates: true,
     }),
 

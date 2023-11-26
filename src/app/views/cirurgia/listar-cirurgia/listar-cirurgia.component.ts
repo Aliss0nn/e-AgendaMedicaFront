@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListarCirurgiaViewModel } from '../models/listarCirurgia.View-Model';
-import { Observable } from 'rxjs';
+import { Observable, map, tap } from 'rxjs';
 import { CirurgiaService } from '../services/cirurgia.service';
 
 @Component({
@@ -13,6 +13,8 @@ cirurgias!: Observable<ListarCirurgiaViewModel[]>;
 
 constructor(private cirurgiaService: CirurgiaService){}
   ngOnInit(): void {
-    this.cirurgias = this.cirurgiaService.selecionarTodos();
+    this.cirurgias = this.cirurgiaService.selecionarTodos().pipe(tap(x => {
+      console.log(x)
+    }));
   }
 }

@@ -3,11 +3,11 @@ import { ListarPacienteViewModel } from "../../paciente/models/listar-paciente.v
 
 export class ListarConsultaViewModel{
 id: string;
-data: Date;
-horaInicio: string;
-horaFinal: string;
-PacienteId: ListarPacienteViewModel;
-MedicoId: ListarMedicoViewModel;
+Data: Date;
+HoraInicio: string;
+HoraFinal: string;
+Paciente: ListarPacienteViewModel;
+Medico: ListarMedicoViewModel;
 
 
 constructor(id: string, data: Date, 
@@ -15,10 +15,10 @@ constructor(id: string, data: Date,
   PacienteId: ListarPacienteViewModel,
    MedicoId: ListarMedicoViewModel,){
   this.id = id;
-  this.data = data;
-  this.horaInicio = horaInicio;
-  this.horaFinal = horaFinal;
-  this.PacienteId = PacienteId;
-  this.MedicoId = MedicoId;
+  this.Data = data;
+  this.HoraInicio = horaInicio;
+  this.HoraFinal = horaFinal;
+  this.Paciente = PacienteId;
+  this.Medico = MedicoId;
 }
 }

@@ -25,7 +25,7 @@ constructor(
 ){
   this.paciente = new ListarPacienteViewModel('','','','')
   this.medico = new ListarMedicoViewModel('','','','','','')
-  this.consultaVm = new VisualizarConsultaViewModel('','','','',this.paciente,this.medico,'')
+  this.consultaVm = new VisualizarConsultaViewModel('','','','',this.paciente,this.medico)
 }
   ngOnInit(): void {
    this.idSelecionado = this.route.snapshot.paramMap.get('id');

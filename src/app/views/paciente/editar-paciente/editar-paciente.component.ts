@@ -33,10 +33,12 @@ constructor(
       cep: new FormControl('',[Validators.required]),
     });
 
-    this.route.data.pipe(map((dados) => dados['paciente'])).subscribe({
-      next: (paciente) => this.obterPaciente(paciente),
-      error: (erro) => this.processarFalha(erro),
-    });
+     //this.pacienteVm = this.route.snapshot.data['paciente'];
+
+    // this.route.data.pipe(map((dados) => dados['paciente'])).subscribe({
+    //   next: (paciente) => this.obterPaciente(paciente),
+    //   error: (erro) => this.processarFalha(erro),
+    // });
   }
 
 public gravar(){

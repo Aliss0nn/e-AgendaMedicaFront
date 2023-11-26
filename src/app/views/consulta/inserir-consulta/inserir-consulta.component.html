@@ -31,7 +31,7 @@
           <div class="col">
             <label class="form-label">Hora de Término:</label>
             <input
-            formControlName="horaTermino"
+            formControlName="Horafinal"
               class="form-control"
               type="time"
               placeholder="Digite o Hórario esperado para o término da Consulta"
@@ -47,8 +47,8 @@
 
           <select      
            class="form-select w-50"
-           name="nomePaciente" id=""
-          formControlName="nomePaciente"
+           name="Paciente" id=""
+          formControlName="Paciente"
          >
         <option *ngFor="let paciente of pacientes" [ngValue]="paciente.id">   
          {{paciente.nome}}
@@ -62,8 +62,8 @@
 
           <select      
            class="form-select w-50"
-           name="nomeMedico" id=""
-          formControlName="nomeMedico"
+           name="Medico" id=""
+          formControlName="Medico"
          >
         <option *ngFor="let medico of medicos" [ngValue]="medico.id">   
          {{medico.nome}}

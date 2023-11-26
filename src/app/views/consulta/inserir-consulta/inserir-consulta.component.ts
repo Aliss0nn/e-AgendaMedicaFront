@@ -31,9 +31,9 @@ ngOnInit(): void {
   this.form = this.FormBuilder.group({
     data: new FormControl(new Date(),[Validators.required]),
     horaInicio: new FormControl('08:00',[Validators.required]),
-    horaTermino: new FormControl('09:00',[Validators.required]),
-    nomePaciente: new FormControl(''),
-    nomeMedico: new FormControl(''),
+    Horafinal: new FormControl('09:00',[Validators.required]),
+    Paciente: new FormControl(''),
+    Medico: new FormControl(''),
   });
 
   this.pacienteService.selecionarTodos().subscribe(res => {
@@ -59,7 +59,9 @@ ngOnInit(): void {
       return;
     }
     
-   this.consultaVm = this.form.value;
+   //this.consultaVm = this.form.value;
+   this.consultaVm = Object.assign({}, this.consultaVm, this.form.value);
+   console.log(this.consultaVm);
 
    this.consultaService.inserir(this.consultaVm).subscribe({
     next: (consulta: FormsConsultaViewModel) => this.processarSucesso(consulta),
@@ -68,7 +70,7 @@ ngOnInit(): void {
   }
 
   processarSucesso(consulta: FormsConsultaViewModel){
-    this.toastrService.success(`A consulta "${consulta.data} foi cadastrada com Sucesso`,'Sucesso');
+    this.toastrService.success(`A consulta "${consulta.HoraInicio} foi cadastrada com Sucesso`,'Sucesso');
 
     this.router.navigate(['/consultas/listar']);
   }

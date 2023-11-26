@@ -37,9 +37,8 @@ export class EditarConsultaComponent implements OnInit {
     data: new FormControl(new Date()),
     horaInicio: new FormControl(''),
     horaTermino: new FormControl(''),
-    nomePaciente: new FormControl(''),
-    nomeMedico: new FormControl(''),
-    recuperacao: new FormControl(''),
+    Paciente: new FormControl(''),
+    Medico: new FormControl(''),
    })
 
    this.idSelecionado = this.route.snapshot.paramMap.get('id');
@@ -81,7 +80,7 @@ export class EditarConsultaComponent implements OnInit {
 
 
   processarSucesso(consulta: FormsConsultaViewModel){
-    this.toastrService.success(`A consulta "${consulta.data} foi cadastrada com Sucesso`,'Sucesso');
+    this.toastrService.success(`A consulta "${consulta.Data} foi cadastrada com Sucesso`,'Sucesso');
 
     this.router.navigate(['/consultas/listar']);
   }

@@ -33,8 +33,8 @@ constructor(
     data: new FormControl(new Date(),[Validators.required]),
     horaInicio: new FormControl('08:00',[Validators.required]),
     horaTermino: new FormControl('09:00',[Validators.required]),
-    nomePaciente: new FormControl(''),
-    medicosSelecionados: new FormControl(''),
+    Paciente: new FormControl(''),
+    Medicos: new FormControl(''),
    });
    
    this.medicoService.selecionarTodos().subscribe((res) => {
@@ -59,6 +59,7 @@ constructor(
       return;
     }
     this.cirurgiaVm = this.form.value;
+    console.log(this.form.value)
 
     this.cirurgiaService.inserir(this.cirurgiaVm).subscribe({
       next: (cirurgia: FormsCirurgiaViewModel) => this.processarSucesso(cirurgia),

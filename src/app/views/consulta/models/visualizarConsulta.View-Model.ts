@@ -3,21 +3,19 @@ import { ListarPacienteViewModel } from "../../paciente/models/listar-paciente.v
 
 export class VisualizarConsultaViewModel{
 id: string;
-data: string;
-horaInicio: string;
-horaFinal: string;
-PacienteId: ListarPacienteViewModel;
-MedicoId: ListarMedicoViewModel;
-recuperacaoMedico: string;
+Data: string;
+HoraInicio: string;
+HoraFinal: string;
+Paciente: ListarPacienteViewModel;
+Medico: ListarMedicoViewModel;
 
 constructor(id: string, data: string, horaInicio: string, horaFinal: string, PacienteId: ListarPacienteViewModel,
-   MedicoId: ListarMedicoViewModel, recuperacaoMedico: string){
+   MedicoId: ListarMedicoViewModel){
   this.id = id;
-  this.data = data;
-  this.horaInicio = horaInicio;
-  this.horaFinal = horaFinal;
-  this.PacienteId = PacienteId;
-  this.MedicoId = MedicoId;
-  this.recuperacaoMedico = recuperacaoMedico;
+  this.Data = data;
+  this.HoraInicio = horaInicio;
+  this.HoraFinal = horaFinal;
+  this.Paciente = PacienteId;
+  this.Medico = MedicoId;
 }
 }
