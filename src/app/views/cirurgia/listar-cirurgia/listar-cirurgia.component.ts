@@ -12,7 +12,7 @@ export class ListarCirurgiaComponent  {
 cirurgias!: Observable<ListarCirurgiaViewModel[]>;
 
 constructor(private cirurgiaService: CirurgiaService){}
-  // ngOnInit(): void {
-  //   this.cirurgias = this.cirurgiaService.selecionarTodos();
-  // }
+  ngOnInit(): void {
+    this.cirurgias = this.cirurgiaService.selecionarTodos();
+  }
 }

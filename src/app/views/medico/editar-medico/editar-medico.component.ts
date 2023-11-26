@@ -33,7 +33,7 @@ export class EditarMedicoComponent implements OnInit{
       cep: new FormControl('', [Validators.required]),
       crm: new FormControl('', [Validators.required]),
     });
-
+    
     this.route.data.pipe(map((dados) => dados['medico'])).subscribe({
       next: (medico) => this.obterMedico(medico),
       error: (erro) => this.processarFalha(erro)
