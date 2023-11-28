@@ -5,16 +5,16 @@ export class VisualizarCirurgiaViewModel{
   id: string;
   data: string;
   horaInicio: string;
-  horaFinal: string;
-  pacienteId: ListarPacienteViewModel;
-  medicosId: ListarMedicoViewModel[];
+  horaTermino: string;
+  paciente: ListarPacienteViewModel;
+  medicos: ListarMedicoViewModel[];
 
   constructor(id: string, data: string, horainicio: string, horafinal: string, pacienteId: ListarPacienteViewModel, medicosId: ListarMedicoViewModel[]){
     this.id = id;
     this.data = data;
     this.horaInicio = horainicio;
-    this.horaFinal = horafinal;
-    this.pacienteId = pacienteId;
-    this.medicosId = medicosId;
+    this.horaTermino = horafinal;
+    this.paciente = pacienteId;
+    this.medicos = medicosId;
   }
 }

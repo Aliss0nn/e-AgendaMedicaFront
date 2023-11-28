@@ -36,18 +36,18 @@ export class EditarConsultaComponent implements OnInit {
    this.form = this.formBuilder.group({
     data: new FormControl(new Date()),
     horaInicio: new FormControl(''),
-    horaTermino: new FormControl(''),
+    horaFinal: new FormControl(''),
     Paciente: new FormControl(''),
     Medico: new FormControl(''),
    })
 
-   this.idSelecionado = this.route.snapshot.paramMap.get('id');
+  //  this.idSelecionado = this.route.snapshot.paramMap.get('id');
 
-   if(!this.idSelecionado) return;
+  //  if(!this.idSelecionado) return;
 
-   this.consultaService.SelecionarPorId(this.idSelecionado).subscribe((res) => {
-    this.form.patchValue(res);
-   });
+  //  this.consultaService.SelecionarPorId(this.idSelecionado).subscribe((res) => {
+  //   this.form.patchValue(res);
+  //  });
 
    this.pacienteService.selecionarTodos().subscribe(res => {
     this.pacientes = res;
@@ -80,7 +80,7 @@ export class EditarConsultaComponent implements OnInit {
 
 
   processarSucesso(consulta: FormsConsultaViewModel){
-    this.toastrService.success(`A consulta "${consulta.Data} foi cadastrada com Sucesso`,'Sucesso');
+    this.toastrService.success(`A consulta "${consulta.Data} foi editada com Sucesso`,'Sucesso');
 
     this.router.navigate(['/consultas/listar']);
   }

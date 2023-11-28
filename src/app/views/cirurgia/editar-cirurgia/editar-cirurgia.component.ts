@@ -38,17 +38,17 @@ export class EditarCirurgiaComponent implements OnInit{
       data: new FormControl(new Date(),[Validators.required]),
       horaInicio: new FormControl('08:00',[Validators.required]),
       horaTermino: new FormControl('09:00',[Validators.required]),
-      nomePaciente: new FormControl(''),
-      medicosSelecionados: new FormControl(''),
+      paciente: new FormControl(''),
+      medicos: new FormControl(''),
      });
 
-     this.idSelecionado = this.route.snapshot.paramMap.get('id');
+    //  this.idSelecionado = this.route.snapshot.paramMap.get('id');
 
-     if(!this.idSelecionado) return;
+    //  if(!this.idSelecionado) return;
 
-     this.cirurgiaService.selecionarPorId(this.idSelecionado).subscribe((res) => {
-      this.form.patchValue(res);
-     });
+    //  this.cirurgiaService.selecionarPorId(this.idSelecionado).subscribe((res) => {
+    //   this.form.patchValue(res);
+    //  });
 
      this.medicoService.selecionarTodos().subscribe((res) => {
       this.medicos = res;

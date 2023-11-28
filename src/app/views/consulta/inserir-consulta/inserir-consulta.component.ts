@@ -32,8 +32,8 @@ ngOnInit(): void {
     data: new FormControl(new Date(),[Validators.required]),
     horaInicio: new FormControl('08:00',[Validators.required]),
     Horafinal: new FormControl('09:00',[Validators.required]),
-    Paciente: new FormControl(''),
-    Medico: new FormControl(''),
+    paciente: new FormControl(''),
+    medico: new FormControl(''),
   });
 
   this.pacienteService.selecionarTodos().subscribe(res => {

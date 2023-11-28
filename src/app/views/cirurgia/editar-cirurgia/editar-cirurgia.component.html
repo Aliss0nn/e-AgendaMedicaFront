@@ -39,8 +39,8 @@
     
               <select      
                class="form-select w-50"
-               name="nomePaciente" id=""
-              formControlName="nomePaciente"
+               name="paciente" id=""
+              formControlName="paciente"
              >
             <option *ngFor="let paciente of pacientes" [ngValue]="paciente.id">   
              {{paciente.nome}}
@@ -51,7 +51,7 @@
     
               <div class="form-group mb-3 position-relative">
                   <label class="form-label">Médicos:</label>
-                   <ng-select [multiple]="true" formControlName="medicosSelecionados">
+                   <ng-select [multiple]="true" formControlName="medicos">
                        <ng-option *ngFor="let medico of medicos" [value]="medico.id">
                           {{medico.nome}}
                       </ng-option>

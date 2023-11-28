@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ListarConsultaViewModel } from '../models/listarConsulta.View-Model';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { ConsultaService } from '../services/consulta.service';
+import { MedicoService } from '../../medico/services/medico.service';
+import { PacienteService } from '../../paciente/services/pacientes.service';
+import { ListarMedicoViewModel } from '../../medico/models/listarMedico.View-Model';
+import { ListarPacienteViewModel } from '../../paciente/models/listar-paciente.view-Model';
 
 @Component({
   selector: 'app-listar-consulta',
@@ -10,9 +14,25 @@ import { ConsultaService } from '../services/consulta.service';
 })
 export class ListarConsultaComponent implements OnInit{
 consultas!: Observable<ListarConsultaViewModel[]>;
+pacientes: ListarPacienteViewModel[] = [];
+medicos: ListarMedicoViewModel[] = [];
 
-constructor(private consultaService: ConsultaService){}
+constructor(private consultaService: ConsultaService,
+  private pacienteService: PacienteService,
+  private medicoService: MedicoService,){}
 ngOnInit(): void {
-  this.consultas = this.consultaService.selecionarTodos();
+  this.pacienteService.selecionarTodos().subscribe(res => {
+    this.pacientes = res;
+  });
+
+  this.medicoService.selecionarTodos().subscribe(res =>{
+    this.medicos = res;
+  });
+
+  this.consultas = this.consultaService.selecionarTodos().pipe(tap(x => {
+    console.log(x)
+  }));
+
+  console.log(this.consultas);
 }
 }
